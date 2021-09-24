@@ -18,7 +18,7 @@
 
 ## Dependencies
 
-| Libaries  | Home Page                    |
+| Libraries  | Home Page                    |
 | --------- | ---------------------------- |
 | Bootstrap | <https://getbootstrap.com/> |
 | Font Awesome | <https://fontawesome.com/> |

@@ -29,7 +29,7 @@ function checkInputs() {
         //show error
         //add error class
         setErrorFor(project_code_bit, "Can't be blank");
-    } else if (!(/^[0-9]{3}$/.test(projectCodeBitValue))) {
+    } else if (isThreeDigits(projectCodeBitValue)) {
 
         setErrorFor(project_code_bit, "Three digits only");
     } else {
@@ -42,7 +42,7 @@ function checkInputs() {
         //show error
         //add error class
         setErrorFor(study_director, "Can't be blank");
-    } else if (!(/^[aA-zZ]{3}$/.test(studyDirectorValue))) {
+    } else if (isThreeInitials(studyDirectorValue)) {
         setErrorFor(study_director, "Three initials(small or capital letter)");
     } else {
         //add success class
@@ -54,7 +54,7 @@ function checkInputs() {
         //show error
         //add error class
         setErrorFor(sheet_serial, "Can't be blank");
-    } else if (!(/^[0-9]{4}$/.test(sheetSerialValue))) {
+    } else if (isFourDigits(sheetSerialValue)) {
         setErrorFor(sheet_serial, "Four digits only");
     } else {
         //add success class
@@ -66,7 +66,7 @@ function checkInputs() {
         //show error
         //add error class
         setErrorFor(test_mosquito_strain, "Can't be blank");
-    } else if (!(/^[1-8]{1}$/.test(testMosquitoStrainValue))) {
+    } else if (mosquitoStrain(testMosquitoStrainValue)) {
         setErrorFor(test_mosquito_strain, "One digit between 1-8");
     } else {
         //add success class
@@ -78,7 +78,7 @@ function checkInputs() {
         //show error
         //add error class
         setErrorFor(age_of_mosquito_days, "Can't be blank");
-    } else if (!(/^[2-5]{1}$/.test(ageOfMosquitoDaysValue))) {
+    } else if (ageMosquito(ageOfMosquitoDaysValue)) {
         setErrorFor(age_of_mosquito_days, "One digit between 2-5");
     } else {
         //add success class
@@ -90,7 +90,7 @@ function checkInputs() {
         //show error
         //add error class
         setErrorFor(tiny_tag_sn, "Can't be blank");
-    } else if (!(/^[0-9]{6}$/.test(tinyTagSnValue))) {
+    } else if (tinyTagSn(tinyTagSnValue)) {
         setErrorFor(tiny_tag_sn, "Six digits only");
     } else {
         //add success class
@@ -102,19 +102,21 @@ function checkInputs() {
         //show error
         //add error class
         setErrorFor(number_of_washes, "Can't be blank");
-    } else if (!(numberOfWashesValue <= 20 && /^[0-9]{2}$/.test(numberOfWashesValue))) {
+    } else if (numberWashes(numberOfWashesValue)) {
         setErrorFor(number_of_washes, "Less than 20, two digits");
     } else {
         //add success class
         setSuccessFor(number_of_washes)
     }
 
+
+
 }
 
 function setErrorFor(input, message) {
     const wrapper = input.parentElement;
     const small = wrapper.querySelector('small');
-
+    
     //add error message inside small
     small.textContent = message;
 
@@ -126,4 +128,32 @@ function setSuccessFor(input) {
     const wrapper = input.parentElement;
     wrapper.className = "wrapper success"
 
+}
+
+function isThreeDigits(value) {
+    return !(/^[0-9]{3}$/.test(value));
+}
+
+function isThreeInitials(value) {
+    return !(/^[aA-zZ]{3}$/.test(value));
+}
+
+function isFourDigits(value) {
+    return !(/^[0-9]{4}$/.test(value));
+}
+
+function ageMosquito(value) {
+    return !(/^[2-5]{1}$/.test(value))
+}
+
+function mosquitoStrain(value) {
+    return !(/^[1-8]{1}$/.test(value));
+}
+
+function tinyTagSn(value) {
+    return !(/^[0-9]{6}$/.test(value));
+}
+
+function numberWashes(value) {
+    return !(value <= 20 && /^[0-9]{2}$/.test(value));
 }
