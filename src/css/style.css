@@ -1,0 +1,93 @@
+.container-fluid {
+    width: 100%;
+    padding: 10px 50px;
+}
+
+.outline-all {
+    border: none;
+    border: 0.1px solid black;
+    text-align: left;
+    padding: 5px auto;
+    display: inline-block;
+    border-collapse: collapse;
+}
+
+input {
+    width: 100%;
+    display: block;
+    /* border: none; */
+    border: 0px solid #ffff;
+    margin: 1px 0 15px 0;
+    padding: 10px;
+    color: black;
+    font-weight: 400;
+    background-color: #ffff;
+    /* border-radius: 4px; */
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 87.5%;
+    word-wrap: break-word;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+
+}
+
+.wrapper {
+    position: relative;
+    margin-bottom: 2.5px;
+    padding-bottom: 5px;
+}
+
+.wrapper.success input {
+    border: 2px solid #2ecc71;
+    border-radius: 4px;
+}
+
+.wrapper.error input {
+    border: 2px solid #e74c3c;
+    border-radius: 4px;
+
+}
+
+.wrapper i {
+    visibility: hidden;
+    position: absolute;
+    top: 45px;
+    right: 10px;
+
+}
+
+.wrapper.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+
+}
+
+.wrapper.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+
+}
+
+.wrapper.error small {
+    color: #e74c3c;
+    visibility: visible;
+
+}
+
+.wrapper small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
