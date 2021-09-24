@@ -1,4 +1,4 @@
-# JS VALIDATION
+# Js Validation
 
 > JS Validation
 
